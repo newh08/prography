@@ -1,0 +1,32 @@
+game:
+  end:
+    delay: 60000
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:prography
+    username: sa
+    password:
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    display-request-duration: true
+  paths-to-match:
+    - "/user/**"
+    - "/team/**"
+    - "/room/**"
+    - "/init"
+    - "/health"
+  writer-with-order-by-keys: true
+  show-actuator: true
